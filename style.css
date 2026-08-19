@@ -1,0 +1,263 @@
+:root {
+  --raspberry: #d71c5c;
+  --soft-pink: #f4a4c2;
+  --charcoal: #44363c;
+  --mauve: #aa96a1;
+  --light-grey: #e8e5e7;
+  --border-grey: #d3d1e2;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--charcoal);
+  background: var(--light-grey);
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar .brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.topbar .brand span {
+  color: var(--soft-pink);
+}
+
+.topbar a.home-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topbar a.home-link:hover {
+  color: var(--soft-pink);
+}
+
+#logout-btn {
+  background: transparent;
+  border: 1px solid var(--mauve);
+  color: var(--white);
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#logout-btn:hover {
+  background: var(--raspberry);
+  border-color: var(--raspberry);
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+h1 {
+  font-size: 26px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: var(--mauve);
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+
+/* ---------- Dashboard tiles ---------- */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .tile-grid { grid-template-columns: 1fr; }
+}
+
+.tile {
+  background: var(--white);
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: var(--charcoal);
+  display: block;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tile:hover {
+  border-color: var(--raspberry);
+  transform: translateY(-2px);
+}
+
+.tile .tile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--soft-pink);
+  margin-bottom: 14px;
+}
+
+.tile h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: var(--charcoal);
+}
+
+.tile p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--mauve);
+  line-height: 1.4;
+}
+
+.tile.external h3::after {
+  content: " ↗";
+  color: var(--raspberry);
+}
+
+/* ---------- Content pages ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--raspberry);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-list li {
+  background: var(--white);
+  border: 1px solid var(--border-grey);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-list .doc-name {
+  font-size: 14px;
+  color: var(--charcoal);
+}
+
+.doc-list .doc-type {
+  font-size: 12px;
+  color: var(--mauve);
+  margin-left: 8px;
+}
+
+.doc-list a.download {
+  background: var(--raspberry);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.doc-list a.download:hover {
+  background: var(--charcoal);
+}
+
+.placeholder-note {
+  background: var(--white);
+  border: 1px dashed var(--border-grey);
+  border-radius: 6px;
+  padding: 18px;
+  color: var(--mauve);
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.cta-box {
+  background: var(--white);
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+  padding: 28px;
+  margin-top: 20px;
+}
+
+.cta-box a.button {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--raspberry);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.cta-box a.button:hover {
+  background: var(--charcoal);
+}
+
+/* ---------- Login gate ---------- */
+#gate-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--charcoal);
+}
+
+#gate-screen .gate-box {
+  text-align: center;
+  color: var(--white);
+}
+
+#gate-screen h1 {
+  color: var(--white);
+  font-size: 22px;
+}
+
+#gate-screen p {
+  color: var(--mauve);
+  margin-bottom: 20px;
+}
+
+#gate-screen button {
+  background: var(--raspberry);
+  color: var(--white);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#gate-screen button:hover {
+  background: var(--soft-pink);
+  color: var(--charcoal);
+}
