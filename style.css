@@ -249,6 +249,48 @@ h1 {
   background: var(--charcoal);
 }
 
+/* ---------- Founder note ---------- */
+.founder-note {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: start;
+  background: var(--white);
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.founder-text h2 {
+  font-size: 17px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--charcoal);
+}
+
+.founder-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--charcoal);
+  margin: 0 0 14px;
+}
+
+.founder-photo {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .founder-note {
+    grid-template-columns: 1fr;
+  }
+  .founder-photo {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
 /* ---------- Login gate ---------- */
 #gate-screen {
   min-height: 100vh;
